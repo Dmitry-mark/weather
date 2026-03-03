@@ -10,7 +10,7 @@ const humidityEl = document.getElementById('humidity');
 const windSpeedEl = document.getElementById('wind-speed');
 const errorMessageEl = document.getElementById('error-message');
 
-// === ГЕОЛОКАЦИЯ ===
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -30,11 +30,14 @@ function getLocation() {
 
 async function getLocationByIP() {
     try {
-        const response = await fetch('https://ipwho.is/');
+        // Вставьте сюда ваш токен от ipinfo.io
+        const token = '14927da11d4fbf';
+        const response = await fetch(`https://ipinfo.io/json?token=${token}`);
         if (!response.ok) throw new Error('Ошибка сети');
         const data = await response.json();
-        if (!data.success) throw new Error(data.message || 'Не удалось определить местоположение');
-        fetchWeather(data.latitude, data.longitude);
+        if (!data.loc) throw new Error('Не удалось определить координаты');
+        const [lat, lon] = data.loc.split(',').map(Number);
+        fetchWeather(lat, lon);
     } catch (error) {
         console.warn('IP-геолокация не сработала:', error);
         showError('Не удалось определить местоположение. Введите город вручную.');

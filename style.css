@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+}
+
+/* Фоны для разных времён суток */
+body.morning {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+}
+
+body.day {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: #333;
+}
+
+body.evening {
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    color: #fff;
+}
+
+body.night {
+    background: linear-gradient(135deg, #2b3a67 0%, #0f2027 100%);
+    color: #fff;
+}
+
+.container {
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.weather-card {
+    text-align: center;
+}
+
+.location {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.temp {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#weather-icon {
+    width: 60px;
+    height: 60px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.manual-input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#city-input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.2);
+    color: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+#city-input:focus {
+    border-color: white;
+    background: rgba(255,255,255,0.3);
+}
+
+#search-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#search-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}

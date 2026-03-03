@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Погода сейчас</h1>
+    <div class="weather-card">
+        <div class="location">
+            <span id="city">--</span>, <span id="country">--</span>
+        </div>
+        <div class="temp" id="temperature">--°C</div>
+        <div class="description">
+            <span id="weather-desc">--</span>
+        </div>
+        <div class="details">
+            <div>Влажность: <span id="humidity">--</span>%</div>
+            <div>Ветер: <span id="wind-speed">--</span> м/с</div>
+        </div>
+    </div>
+    <div class="error" id="error-message"></div>
+    <div class="manual-input">
+        <input type="text" id="city-input" placeholder="Введите город">
+        <button id="search-btn">Узнать погоду</button>
+    </div>
+</div>
+</body>
+</html>
